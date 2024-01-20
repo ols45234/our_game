@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="./style.css">
+	<link href="https://fonts.cdnfonts.com/css/sansation" rel="stylesheet">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">  
+		<title>Своя игра</title> 
+	</head>
+	<body>
+		<div class="start" id="start">
+			<p id="welcome-text">Своя игра</p>
+			<button id="create-room" type="button" onclick="select_mode()">Cоздать игру</button>
+			<button id="join-room" type="button" onclick="join_room()">Войти в игру</button>
+			<button id="about-game" type="button" onclick="document.getElementById('about-game-menu').showModal()">Об игре</button>
+			<dialog id="about-game-menu">
+				<form method="dialog">
+					<button id="about-game-close" value="cancel">&#215;</button>
+					<p id="about-game-text">Своя игра — интеллектуальная викторина, в которой каждый может проверить свои знания и скорость реакции и сразиться с оппонентами.
+						<br> Правила игры очень просты: все вопросы в игре поделены по темам, и у каждого вопроса в теме есть своя стоимость.
+						<br> У каждого игрока имеется персональный счёт, который в начале игры равен 0. 
+						<br> Звучит вопрос, после которого на экране появляется рамка, показывающая, что можно отвечать. 
+						<br> Если игрок знает ответ, он может нажать на кнопку. 
+						<br> Тот из игроков, кто нажмёт на кнопку ранее , и даёт ответ. 
+						<br> В случае верного ответа стоимость вопроса прибавляется к счёту игрока; в случае неверного — снимается со счёта. </p>
+				</form>
+			</dialog>
+		</div>
+
+		<div class="team" id="select-mode-ui" style="display:none">
+			<p id="information" style="display:block">Выбор режима</p>
+			<div class='game-modes-row'>
+				<button id="sole-computer-mode-button" type="button" onclick="create_solo_room()" style="display:block">Один компьютер</button>
+				<button id="local-net-mode-button" onclick="create_room()" style="display:block">Локальная сеть</button>
+			</div>
+			<button id="login-back" type="button" onclick="backToMain()" style="display:block">Назад</button>
+		</div>
+
+		<div class="team" id="team-creating-ui" style="display:none">
+			<p id="information" style="display:block">Создание команд</p>
+			<!--<input type="text" id="team-create-name" maxlength="32" style="display:block">-->
+			<button id="create-team" type="button" onclick="create_team()" style="display:block">Добавить команду</button>
+			<div id="team"></div>
+			<div class='vrow'>
+				<button id="submit-teams-solo" type="button" onclick="startupsolo()" style="display:none">Готово</button>
+				<button id="submit-teams" type="button" onclick="submit_teams()" style="display:block">Готово</button>
+				<button id="login-back" onclick="backToMain()">Назад</button>
+			</div>
+		</div>
+
+		<p id="roomId"></p>
+		<div id="marker-div">
+			<p id="marker" style="display:none"></p>
+		</div>
+		
+		<div id="login" style="display:none" class='id'>
+			<p id='text-login'>Вход в игру</p>
+			<input id="game-id"  placeholder="Введите ID игры">
+			<br>
+			<input id="username" placeholder="Имя команды">
+			<div class='vrov'>
+				<button id="submit_username" type="button" onclick="apply_username()">Войти</button>
+				<button id="login-back" onclick="backToMain('login')">Назад</button>
+			</div>
+		</div>
+        
+        
+		<div class="main-content">
+			<div class="main-table">
+				<table id="table" style="display:none"></table>
+			</div>
+			
+            
+            <div class="reply-div" id="reply-div">
+                <p id='question-preview'></p>
+				<img src='./images/empty.png' id='question-image'/>
+                <button id="answer-button" type="button" onclick="reply()">ответить</button>
+            </div>
+            
+            
+			<div class="question-div" id="question-div" style="display:none">
+				<p id="question"style="display:none">Вопрос: </p>
+				<img src='./images/empty.png' id='question-image2' style="display:none"/>
+				<textarea class = "question-elements" id="answer" style="display:none;"></textarea>
+				<button class = "question-elements" id="submit" type="button" onclick="submit_answer()" style="display:none">Ответить</button>
+				<button class = "question-elements" id="submit2" type="button" onclick="submit_answersolo()" style="display:none">Ответить</button>
+			</div>
+			
+			<div id="game-end" style="display:none">
+				<button id="back-to-menu" onclick="backToMain('login')">Назад</button>
+			</div>
+            
+			<div class="balance-div">
+				<div class="balance" id="balance" class="bal-el" style="display:none"></div>
+			</div>
+		</div>
+        
+        
+		<script src="./script.js" type="application/javascript"></script>
+	</body>	
+</html>

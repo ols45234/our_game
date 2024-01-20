@@ -1,0 +1,577 @@
+@font-face {
+    font-family: Sansation; /* Имя шрифта */
+    src: url(font/Sansation_Regular.ttf); /* Путь к файлу со шрифтом */
+ }
+
+body{
+	width: 100%;
+	height: 100%;
+}
+
+ button{
+	border-color: rgb(0, 163, 255);
+	color: #fff;
+	box-shadow: 0 0 40px 40px rgb(0, 163, 255) inset, 0 0 0 0 rgb(0, 163, 255);
+	-webkit-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+ }
+
+ button:hover {
+	box-shadow: 0 0 10px 0 rgb(0, 163, 255) inset, 0 0 10px 4px rgb(0, 163, 255);
+	color: rgb(0, 163, 255);
+  }
+
+.button-disabled{
+	border-color: rgb(34, 82, 110);
+	color: #fff;
+ }
+
+
+.start{
+	margin-top: 12%;
+	margin-left:25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+	width: 50%;
+	height: 50%;
+}
+
+#welcome-text{
+	font-family: 'Sansation';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 128px;
+	line-height: 16px;
+	line-height: 49px;
+
+	/* Своя игра */
+
+	color: #00A3FF;
+}
+
+#create-room{
+	width: 210px;
+	height: 50px;
+	margin-top: -60px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#join-room{
+	width: 210px;
+	height: 50px;
+	margin-top:20px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#about-game{
+	width: 210px;
+	height: 50px;
+	margin-top:20px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#about-game-text{
+	font-size: 35px;
+	margin-left: 40px;
+	margin-top: 50px;
+	margin-right: 40px;
+}
+
+#about-game-menu{
+	color: #FFFFFF;
+	background: rgb(0, 163, 255);
+	border-radius: 40px;
+	border:none;
+	width: 80%;
+	height: 70%;
+}
+
+#about-game-close{
+	background: hsl(202, 100%, 41%);
+	border-color: hsl(202, 100%, 40%);
+	border-style: solid;
+	border-radius: 50%;
+	font-size: 50px;
+	color: white;
+	width: 60px;
+	height: 60px;
+}
+
+dialog[open] {
+    -webkit-animation: show 1s ease normal;
+}
+
+@-webkit-keyframes show {
+    from {
+        transform: translateY(-110%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.team{
+	margin-top: auto;
+	margin-bottom: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+}
+
+.team-name{
+	width: 30px;
+	height: 30px;
+	box-shadow: none;
+	border-radius: 10px;
+	background-color:  #00A3FF;
+	font-size: 20px;
+	color: #FFFFFF;
+	transition: all 150ms ease-in-out;
+}
+
+.team-color-in{
+	margin-bottom: 0px;
+	width: 30px;
+	height: 30px;
+	box-shadow: none;
+	border-radius: 10px;
+	border-style: outset;
+	align-self: flex-start;
+	border-color: rgb(0, 163, 255);
+	background-color:  #00A3FF;
+	block-size: 30px;
+	border-width: 2px;
+	font-size: 20px;
+	color: #FFFFFF;
+	transition: all 150ms ease-in-out;
+}
+
+.team-name:hover{
+	box-shadow: none;
+	color: #FFFFFF;
+}
+
+.team-name-in{
+	box-sizing: border-box;
+	width: 220px;
+	height: 30px;
+	margin-top: -45px;
+	background: #E2F5FF;
+	border: 2px solid #00A3FF;
+	border-radius: 6px;
+
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 16px;
+	color: rgba(0, 0, 0, 0.36);
+}
+
+#team{	
+	margin-top:20px;
+	margin-bottom:20px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+}
+
+#information{
+	margin-top: 240px;
+	margin-bottom: 50px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 34px;
+	line-height: 49px;
+	color: #000000;
+}
+
+#create-team{
+	height: 50px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#submit-teams{
+	height: 50px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#submit-teams-solo{
+	height: 50px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#balance_change {
+    opacity: 0;
+}
+
+#question {
+	display: none;
+	width:100%;
+	font-size: 25px;
+}
+
+#submit {
+	margin-top: 10px;
+	display: none;
+	width:50%;
+	font-size: 26px;
+	height:50px;
+	border-radius: 20px;
+}
+
+#submit2 {
+	margin-top: 10px;
+	display: none;
+	width:50%;
+	font-size: 26px;
+	height:50px;
+	border-radius: 20px;
+}
+
+#answer-button {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#table {
+    width: 1000px;
+    height: 400px;
+    margin-top: 10px;
+	border: 5px;
+    border-color: black;
+    border-spacing: 5px;
+    empty-cells: hide;
+}
+
+.question-select {
+	width: 100%;
+	height: 100%;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	/* or 50% */
+	color: #FFFFFF;
+	
+	border-radius: 10px;
+	border:none;
+}
+
+.table-element {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	font-size: 26px;
+	display: flex;
+	justify-content: center;
+	/* background-color: #F00; */
+	align-items: center;
+} 
+
+.main-content {
+	display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: flex-start;
+	width:75%;
+	height:50%;
+	margin-top: 12%;
+	margin-left: 20%;
+}
+
+.reply-div {
+    display: none
+}
+
+#question-div {
+	width:800px;
+	height: 400px;
+}
+
+#question-image {
+	width: 50%;
+	border: 5px;
+    border-color: black;
+    border-spacing: 5px;
+}
+
+#answer{
+	width:100%;
+	height: 80px;
+	font-size: 25px;
+}
+
+#question-image2 {
+	width: 50%;
+	border: 5px;
+    border-color: black;
+    border-spacing: 5px;
+}
+
+#username{
+	box-sizing: border-box;
+	width: 370px;
+	height: 52px;
+	background: #E2F5FF;
+	border: 2px solid #00A3FF;
+	border-radius: 10px;
+	margin-top: -1px;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 16px;
+	color: rgba(0, 0, 0, 0.36);
+}
+
+#game-id{
+	box-sizing: border-box;
+	width: 370px;
+	height: 52px;
+	margin-top: -45px;
+	background: #E2F5FF;
+	border: 2px solid #00A3FF;
+	border-radius: 10px;
+
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 16px;
+	color: rgba(0, 0, 0, 0.36);
+}
+
+#submit_username{
+	height: 50px;
+	width: 100px;
+	margin-top:10px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#login-back{
+	height: 50px;
+	width: 100px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#back-to-menu{
+	height: 50px;
+	width: 100px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#information{
+	width: 563px;
+	height: 50px;
+	font-family: 'Sansation';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 64px;
+	color: #00A3FF;
+	text-align: center;
+}
+
+.id{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+	margin-top: 160px;
+}
+
+#marker {
+	margin-top: 400px;
+	font-family: 'Sansation';
+	font-style: normal;
+	font-weight: 400;
+	
+	font-size: 64px;
+	line-height: 16px;
+
+	color: #00A3FF;
+}
+
+#marker-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    align-items: center;
+}
+
+.vrow{
+	display: flex;
+	height: 50px;
+	width:240px;
+	flex-direction: row;
+	justify-content: space-between;
+    align-items: center;
+}
+
+.game-modes-row{
+	display: flex;
+	height: 50px;
+	width:560px;
+	margin-bottom: 20px;
+	flex-direction: row;
+	justify-content: space-between;
+    align-items: center;
+}
+
+#text-login{
+	width: 372px;
+	height: 39px;
+	font-family: 'Sansation';
+	font-style: normal;
+	font-size: 64px;
+	line-height: 16px;
+	color: #00A3FF;
+}
+
+#sole-computer-mode-button{
+	height: 50px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+#local-net-mode-button{
+	height: 50px;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 40px;
+	border-radius: 10px;
+	border:none;
+}
+
+.balance-div {
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	margin-left:20px;
+    width:300px;
+	height:400px;
+	font-size:19px;
+}
+
+.balance {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height:400px;
+}
+
+.teambrick{
+	margin-top: 10px;
+	width: 100%;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	/* or 50% */
+	color: #FFFFFF;
+	text-align: center;
+	border-radius: 10px;
+	border:none;
+	margin-bottom: 0px;
+	width: 300px;
+	height: 50px;
+	box-shadow: none;
+	border-radius: 10px;
+	border-style: outset;
+	align-self: flex-start;
+	border-color: rgb(0, 163, 255);
+	background-color:  #00A3FF;
+	block-size: 30px;
+	border-width: 2px;
+	font-size: 20px;
+	color: #FFFFFF;
+	transition: all 1500ms ease-in-out;
+}
+
+.teambrickselected{
+	transition: all 1500ms ease-in-out;
+	font-size: 22px;
+	width: 110%;
+	height: 55px;
+}
+
+.teambrick:hover{
+	box-shadow: none;
+	color: #FFFFFF;
+}
+
+/*#create_team_{}*/
+
+
+textarea {vertical-align:center;}
+
